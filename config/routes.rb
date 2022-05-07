@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
-  root 'static_pages#home_page'
-  get "privacy_policy", to: "static_pages#privacy_policy"
+  devise_for :users
+  get 'dashboard', to: 'static_pages#dashboard'
+  root "static_pages#home_page"
 end
